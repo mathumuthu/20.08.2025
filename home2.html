@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-commerce SaaS </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: white; color: #1a1a1a; transition: background 0.3s, color 0.3s; scroll-behavior: smooth; }
+    header {
+      background: whitesmoke;
+      color: #0f172a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: sticky;
+    }
+    header h1 { font-size: 1.8rem; }
+    nav a {
+      margin-left: 20px;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 500;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    nav a:hover { color: black; }
+    .toggle-btn {
+      margin-left: 20px;
+      padding: 6px 12px;
+      border: none;
+      background:#3a0dc1 ;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      background: linear-gradient(to right, #b6c0c5, #9eb9e4);
+      color: #3a0dc1;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      
+      background:rgb(23, 23, 158) ;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      color: #3a0dc1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      
+    }
+    .card {
+      background:whitesmoke;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .card button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      background: #0f3169;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .cta {
+      background: #1d4ed8;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+    .cta button {
+      margin-top: 20px;
+      background:blue;
+      color: rgb(26, 16, 5);
+      border: none;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #1f2937;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+    .social a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #111827;
+      color: #f9fafb;
+    }
+    body.dark-mode header, body.dark-mode footer {
+      background: #0f172a;
+      color: white;
+    }
+    body.dark-mode .card {
+      background: #1e293b;
+    }
+    body.dark-mode nav a {
+      color: #ddd;
+    }
+    body.dark-mode .toggle-btn {
+      background: #e5e7eb;
+      color:white;
+    }
+    body.dark-mode .hero {
+      background: linear-gradient(to right, #caced8, #2563eb);
+    }
+   
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>shopNow</h1>
+    <nav>
+              <a href="index.html">Home</a>
+
+      <a href="404.html">Features</a>
+      <a href="404.html">Pricing</a>
+      <a href="404.html">Why Choose Us</a>
+      <a href="404.html">Contact</a>
+      <button class="toggle-btn" onclick="toggleMode()">Dark Mode</button>
+    </nav>
+  </header>
+ <section class="running-products">
+  <h2>🔥 Trending Products</h2>
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- Product Images -->
+      <img src="https://dummyimage.com/200x200/eee/000&text=Shoes" alt="Shoes">
+      <img src="https://dummyimage.com/200x200/ccc/000&text=Watch" alt="Watch">
+      <img src="https://dummyimage.com/200x200/bbb/000&text=Bag" alt="Bag">
+      <img src="https://dummyimage.com/200x200/aaa/000&text=Phone" alt="Phone">
+      <img src="https://dummyimage.com/200x200/999/000&text=Laptop" alt="Laptop">
+      <!-- Duplicate for seamless loop -->
+      <img src="https://dummyimage.com/200x200/eee/000&text=Shoes" alt="Shoes">
+      <img src="https://dummyimage.com/200x200/ccc/000&text=Watch" alt="Watch">
+      <img src="https://dummyimage.com/200x200/bbb/000&text=Bag" alt="Bag">
+      <img src="https://dummyimage.com/200x200/aaa/000&text=Phone" alt="Phone">
+      <img src="https://dummyimage.com/200x200/999/000&text=Laptop" alt="Laptop">
+    </div>
+  </div>
+</section>
+
+<style>
+.running-products {
+  padding:40px 0; background:rgb(34, 34, 194); text-align:center;
+}
+.running-products h2 {
+  margin-bottom:20px; font-size:24px; font-weight:700; color:#030d23;
+}
+.marquee {
+  overflow:hidden; white-space:nowrap;
+}
+.marquee-track {
+  display:inline-flex; gap:40px;
+  animation:scroll 20s linear infinite;
+}
+.marquee img {
+  width:200px; border-radius:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+  transition:transform .3s ease;
+}
+.marquee img:hover {
+  transform:scale(1.05);
+}
+@keyframes scroll {
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
+}
+</style>
+
+
+  <section class="hero">
+    <h2>Launch Your E-commerce Business in Minutes</h2>
+    <p>All-in-one SaaS platform for building, managing, and scaling your online store.</p>
+   <a href="404.html"> <button id="startTrialBtn"  >Free trial</button></a>
+  </section>
+
+  <section id="features">
+    <h3 class="section-title">Powerful Features</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Store Builder</h4>
+        <p>Drag and drop editor to launch beautiful storefronts without coding.</p>
+      </div>
+      <div class="card">
+        <h4>Product Management</h4>
+        <p>Add, update, or manage unlimited products easily.</p>
+      </div>
+      <div class="card">
+        <h4>Payment Gateways</h4>
+        <p>Accept UPI, cards, wallets and more. Fully secure and fast.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h3 class="section-title">Simple Pricing</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Starter</h4>
+        <p><strong>$9/mo</strong></p>
+        <p>Perfect for individuals and side hustlers.</p>
+       <a href="404.html"> <button onclick="subscrib('Starter')">Subscribe</button></a>
+      </div>
+      <div class="card">
+        <h4>Growth</h4>
+        <p><strong>$29/mo</strong></p>
+        <p>For growing online stores with advanced needs.</p>
+       <a href="404.html"> <button onclick="subscrib('Growth')">Subscribe</button></a>
+      </div>
+      <div class="card">
+        <h4>Enterprise</h4>
+        <p><strong>Custom</strong></p>
+        <p>Tailored solutions for large-scale e-commerce brands.</p>
+       <a href="404.html"> <button onclick="subscrib('Enterprise')">Contact Sales</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <h3 class="section-title">Why StoreGrow?</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Lightning Fast Setup</h4>
+        <p>Go live in 5 minutes with our intuitive tools.</p>
+      </div>
+      <div class="card">
+        <h4>SEO Friendly</h4>
+        <p>Optimized for search engines and better visibility.</p>
+      </div>
+      <div class="card">
+        <h4>24/7 Support</h4>
+        <p>Live chat, email, and community support always available.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <h3>Ready to Sell Smarter?</h3>
+    <p>Start your 14-day free trial. No credit card needed.</p>
+   <a href="404.html"> <button id="ctaBt">Create Your Store</button></a>
+  <!-- n etuthuta btn -->
+  </section>
+
+  <footer>
+    <p>© 2025 stacklyshopNow.
+      Email: stacklyshopnow@yourstore.com .</p>
+    <div class="social">
+      <a href="404.html">Facebook</a>
+      <a href="404.html">Twitter</a>
+      <a href="404.html">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    // Scroll to pricing on "Start Trial"
+    document.getElementById("startTrialBtn").addEventListener("click", () => {
+      document.getElementById("pricing").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // Subscribe buttons
+    function subscribe(plan) {
+      alert("Subscribed to " + plan + " plan!");
+    }
+
+    // CTA Button: Create Store
+    document.getElementById("ctaBtn").addEventListener("click", () => {
+      alert("Redirecting to store creation...");
+      // window.location.href = 'signup.html'; // Optional
+    });
+  </script>
+
+</body>
+</html>
